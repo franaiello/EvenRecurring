@@ -20,21 +20,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class EvenRecurringTest {
 
     @Test
-    public void findRecurringInt() {
-        int result = EvenRecurring.findOccurrencesOne(new int[]{1, 2, 3, 2, 2, 3, 1});
+    public void findOddOccurrencesOne() {
+        int result = EvenRecurring.findOddOccurrencesOne(new int[]{1, 2, 3, 2, 2, 3, 1});
         assertThat(result).isEqualTo(2);
     }
 
 
     @Test
-    public void bitwiseXOR() {
+    public void findOddOccurrencesUsingbitwiseXOR() {
         int result = EvenRecurring.findOddOccurrencesUsingBitwiseXOR(new int[]{1, 2, 3, 2, 3, 1, 3});
         assertThat(result).isEqualTo(3);
     }
 
     @Test
-    public void findOddOccurrences() {
-        List<Integer> result = EvenRecurring.findOddOccurencesTwo(new int[]{2, 3, 2, 3, 3, 4, 5, 4, 2, 2, 5, 6});
+    public void findOddOccurrencesTwo() {
+        List<Integer> result = EvenRecurring.findOddOccurrencesTwo(new int[]{2, 3, 2, 3, 3, 4, 5, 4, 2, 2, 5, 6});
         assertThat(result).isEqualTo(new ArrayList<Integer>(Arrays.asList(3,6)));
     }
 }

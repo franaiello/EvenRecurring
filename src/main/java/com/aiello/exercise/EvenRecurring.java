@@ -20,7 +20,7 @@ public class EvenRecurring {
      * @param array
      * @return
      */
-    public static int findOccurrencesOne(int[] array) {
+    public static int findOddOccurrencesOne(int[] array) {
         Map<Integer, Integer> map = buildMap(array);
 
         return getHighestRecurringValue(map);
@@ -79,7 +79,7 @@ public class EvenRecurring {
         return res;
     }
 
-    public static List<Integer> findOddOccurencesTwo(int[] array) {
+    public static List<Integer> findOddOccurrencesTwo(int[] array) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         for (int i = 0; i < array.length; i++) {
