@@ -7,7 +7,7 @@ import java.util.*;
  - all integers in the array are assumed to be even occurring.
  - except for one integer which occurs odd no. of times
 
- the function finds the odd occuring integer and returns it.
+ the function finds the odd occurring integer and returns it.
 
  [1,2,3,2,2,3,1] = 2
 
@@ -20,7 +20,7 @@ public class EvenRecurring {
      * @param array
      * @return
      */
-    public static int findRecurringInt(int[] array) {
+    public static int findOccurrencesOne(int[] array) {
         Map<Integer, Integer> map = buildMap(array);
 
         return getHighestRecurringValue(map);
@@ -69,7 +69,7 @@ public class EvenRecurring {
      * @return
      * @author http://www.geeksforgeeks.org/find-the-number-occurring-odd-number-of-times/
      */
-    public static int getOddOccurrence(int[] array) {
+    public static int findOddOccurrencesUsingBitwiseXOR(int[] array) {
         int i;
         int res = 0;
         for (i=0; i< array.length; i++) {
@@ -77,5 +77,24 @@ public class EvenRecurring {
         }
 
         return res;
+    }
+
+    public static List<Integer> findOddOccurencesTwo(int[] array) {
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        for (int i = 0; i < array.length; i++) {
+            Integer freq = map.get(array[i]);
+            map.put(array[i], (freq == null) ? 1 : freq + 1);
+        }
+
+        List<Integer> results = new ArrayList<Integer>();
+
+        for(Map.Entry<Integer, Integer> nums : map.entrySet()) {
+            if(nums.getValue() % 2 != 0) {
+                results.add(nums.getKey());
+            }
+        }
+
+        return results;
     }
 }
